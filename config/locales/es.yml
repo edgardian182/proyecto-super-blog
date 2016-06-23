@@ -1,0 +1,4 @@
+es:
+  errors:
+    blank: "no puede estar en blanco"
+    invalid: "es inválido"

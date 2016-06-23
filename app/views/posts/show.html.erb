@@ -1,17 +1,17 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 text-justify">
 
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
+    <%= link_to 'Volver', posts_path %>
+    <h1><%= @post.title %></h1>
+    <p><%= @post.description %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
+    <% if user_signed_in? && current_user == @post.user %>
+      <%= link_to "<span class='glyphicon glyphicon-pencil'></span> Editar".html_safe, edit_post_path(@post) %>
+    <% end %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+    <div class="comentario">
+      <!-- Comentarios y su formulario -->
+    </div>
+
+  </div>
+</div>
