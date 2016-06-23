@@ -4,3 +4,9 @@ footer {
   border-top: 1px solid #eaeaea;
   color: #777
 }
+
+// Clase para dar estilo a links de registro de DEVISE
+.register:hover {
+  background-color: white;
+  color:red;
+}
