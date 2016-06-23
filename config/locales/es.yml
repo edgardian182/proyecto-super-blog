@@ -6,11 +6,8 @@ es:
         restrict_dependent_destroy:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
-    attributes:
-      post:
-        title: "Título"
-        description: "Descripción"
-        user: "Usuario"
+
+
   date:
     abbr_day_names:
     - dom
@@ -110,6 +107,16 @@ es:
   errors:
     format: "%{attribute} %{message}"
     messages:
+      # Tomados de DEVISE
+      already_confirmed: "was already confirmed, please try signing in"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved:
+        one: "1 error prohibió este %{resource} de ser salvado:"
+        other: "%{count} errores prohibieron este %{resource} de ser salvado:"
+      # FIN toma de DEVISE
       accepted: debe ser aceptado
       blank: no puede estar en blanco
       present: debe estar en blanco
@@ -218,7 +225,8 @@ es:
     pm: pm
 
 
-    # DEVISE
+    # ********************** DEVISE *********************
+
   devise:
     confirmations:
       new:
@@ -292,10 +300,10 @@ es:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
       updated: "You updated your account successfully."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
+      signed_in: "Ingreso satisfactorio."
+      signed_out: "Cerró sesión satisfactoriamente."
       new:
-        sign_in: "Sign in"
+        sign_in: "Ingrese"
     shared:
       links:
         didn_t_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
@@ -303,23 +311,15 @@ es:
         forgot_your_password: "Forgot your password?"
         sign_in: "Sign in"
         sign_in_with_provider: "Sign in with %{provider}"
-        sign_up: "Sign up"
+        sign_up: "Registrese"
     unlocks:
       new:
         resend_unlock_instructions: "Resend unlock instructions"
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
-  errors:
-    messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
-      not_saved:
-        one: "1 error prohibió este %{resource} de ser salvado:"
-        other: "%{count} errores prohibieron este %{resource} de ser salvado:"
+
+
   activerecord:
     models:
       user: "User"
@@ -329,14 +329,19 @@ es:
         email: "Email"
         password: "Password"
         last_sign_in_at: "Last signed in at"
+      post:
+        title: "Título"
+        description: "Descripción"
+        user: "Usuario"
+
     errors:
       models:
         user:
           attributes:
             email:
-              blank: no puede estar en blanco
+              blank: "no puede estar en blanco"
             password:
-              blank: no puede estar en blanco
+              blank: "no puede estar en blanco"
 
 
 
