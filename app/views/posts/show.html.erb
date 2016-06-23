@@ -3,14 +3,29 @@
 
     <%= link_to 'Volver', posts_path %>
     <h1><%= @post.title %></h1>
+    <br>
     <p><%= @post.description %></p>
 
     <% if user_signed_in? && current_user == @post.user %>
       <%= link_to "<span class='glyphicon glyphicon-pencil'></span> Editar".html_safe, edit_post_path(@post) %>
     <% end %>
 
-    <div class="comentario">
+    <div class="">
       <!-- Comentarios y su formulario -->
+      <h2 class="comentario">Comentarios</h2>
+      <% @post.comments.each do |comment| %>
+        <div class="panel panel-default">
+          <header class="panel-heading">
+            <strong><%= comment.user.email %> comentó esto hace <%= time_ago_in_words(comment.created_at) %></strong>
+          </header>
+          <div class="panel-body">
+            <%= comment.body %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= render 'commentsF' %>
+
     </div>
 
   </div>
