@@ -4,7 +4,7 @@
     <%= link_to 'Volver', posts_path %>
     <h1><%= @post.title %></h1>
     <br>
-    <p><%= @post.description %></p>
+    <%= markdown(simple_format(@post.description)) %>
 
     <% if user_signed_in? && current_user == @post.user %>
       <%= link_to "<span class='glyphicon glyphicon-pencil'></span> Editar".html_safe, edit_post_path(@post) %>
