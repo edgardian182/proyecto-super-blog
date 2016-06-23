@@ -3,7 +3,7 @@
 
     <% @posts.each do |post| %>
       <h2 class="title"><%= link_to post.title, post %></h2>
-      <p class="creacion">Publicado por <%= post.user.email %> <%= time_ago_in_words(post.created_at) %> ago</p>
+      <p class="creacion">Publicado por <%= post.user.email %> hace <%= time_ago_in_words(post.created_at) %></p>
       <p><%= markdown(truncate(post.description, length: 250)) %></p>
 
       <% if user_signed_in? && current_user == post.user %>
