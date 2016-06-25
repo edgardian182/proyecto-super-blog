@@ -17,4 +17,7 @@
 
 p {
   font-size: 14px;
+  width: 750px;
+  /* Si hay palabras largas con esta propiedad la corta y le hace coinsidir con el espacio determiando para ello (width) */
+  overflow-wrap: break-word;
 }

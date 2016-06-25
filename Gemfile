@@ -27,6 +27,7 @@ gem 'devise'
 
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+# Para soportar MARKDOWN
 gem 'redcarpet'
 
 # Use ActiveModel has_secure_password
